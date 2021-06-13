@@ -13,10 +13,14 @@ require('dotenv').config({path: 'variables.env'});
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
 app.engine(
 	'handlebars',
 	exphbs({
 		defaultLayout: 'layout',
+		helpers: require('./helpers/handlebars'),
 	})
 );
 

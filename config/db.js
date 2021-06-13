@@ -9,3 +9,5 @@ mongoose.connect(process.env.DATABASE, {
 mongoose.connection.on('error', err => {
 	console.log(err);
 });
+
+require('../models/Vacantes');
